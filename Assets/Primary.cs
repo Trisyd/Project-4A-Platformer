@@ -5,6 +5,7 @@ using UnityEngine;
 public class Primary : MonoBehaviour
 {
     [SerializeField] float playerSpeed = 3.0f;
+    [SerializeField] float jumpForce = 2.0f;
 
     private float direction;
 
@@ -31,5 +32,10 @@ public class Primary : MonoBehaviour
         }
         if (direction < 0) { GetComponent<SpriteRenderer>().flipX = true; }
         else if (direction > 0) { GetComponent<SpriteRenderer>().flipX = false; }
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
     }
 }
