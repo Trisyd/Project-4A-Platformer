@@ -6,6 +6,7 @@ public class Primary : MonoBehaviour
 {
     [SerializeField] float playerSpeed = 3.0f;
     [SerializeField] float jumpForce = 2.0f;
+    [SerializeField] float contactThreshold = 90f;
 
     private float direction;
     private bool grounded = true;
@@ -44,6 +45,14 @@ public class Primary : MonoBehaviour
     {
         if (collision.transform.tag == "Ground")
         {
+            //for (int i = 0; i < collision.contacts.Length; i++)
+            //{
+            //    if (Vector3.Angle(collision.contacts[i].normal, Vector3.up) <= contactThreshold)
+            //    {
+            //        Debug.Log("We reached the weird angle code");
+            //    }
+            //}
+
             grounded = true;
         }
     }
