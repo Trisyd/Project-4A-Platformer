@@ -8,6 +8,7 @@ public class Primary : MonoBehaviour
     [SerializeField] float jumpForce = 2.0f;
 
     private float direction;
+    private bool grounded = true;
 
 
     // Start is called before the first frame update
@@ -33,9 +34,25 @@ public class Primary : MonoBehaviour
         if (direction < 0) { GetComponent<SpriteRenderer>().flipX = true; }
         else if (direction > 0) { GetComponent<SpriteRenderer>().flipX = false; }
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && grounded == true)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            grounded = false;
         }
     }
 }
