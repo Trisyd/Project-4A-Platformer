@@ -48,7 +48,7 @@ public class Primary : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift))
         {
-            animator.SetBool("StandingAttacking", true);
+            animator.SetTrigger("Standing&Attacking");
         }
     }
 
