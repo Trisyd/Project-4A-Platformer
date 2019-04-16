@@ -12,6 +12,7 @@ public class Primary : MonoBehaviour
 
     private float direction;
     private bool grounded = true;
+    private bool isAttacking = false;
 
 
     private void Awake()
