@@ -22,9 +22,14 @@ public class BasicEnemy : MonoBehaviour
         else if (isMovingRight == false) { gameObject.transform.Translate(Vector2.left * enemySpeed * Time.deltaTime); }
         if (gameObject.transform.position.x >= maxDistance + staticPosition) { isMovingRight = false; }
         else if (gameObject.transform.position.x <= staticPosition - maxDistance) { isMovingRight = true; }
-        //gameObject.transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
-        //if (gameObject.transform.position.x >= maxDistance) { gameObject.transform.Translate(Vector2.left * enemySpeed * Time.deltaTime); }
-        //else if (gameObject.transform.position.x <= -maxDistance) { gameObject.transform.Translate(Vector2.right * enemySpeed * Time.deltaTime); }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
