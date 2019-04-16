@@ -8,9 +8,16 @@ public class Primary : MonoBehaviour
     [SerializeField] float jumpForce = 2.0f;
     [SerializeField] float contactThreshold = 90f;
 
+    private Animator animator;
+
     private float direction;
     private bool grounded = true;
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +45,10 @@ public class Primary : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && grounded == true)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            animator.SetBool("StandingAttacking", true);
         }
     }
 
