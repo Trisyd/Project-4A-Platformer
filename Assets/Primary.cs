@@ -28,17 +28,19 @@ public class Primary : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxis("Horizontal"));
         direction = Input.GetAxis("Horizontal");
 
         if (Input.GetKey(KeyCode.D))
         {
             gameObject.transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
+            animator.SetBool("Running", true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             gameObject.transform.Translate(Vector2.left * playerSpeed * Time.deltaTime);
+            animator.SetBool("Running", true);
         }
+        else { animator.SetBool("Running", false); }
         if (direction < 0) { GetComponent<SpriteRenderer>().flipX = true; }
         else if (direction > 0) { GetComponent<SpriteRenderer>().flipX = false; }
 
