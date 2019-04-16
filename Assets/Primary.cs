@@ -52,9 +52,14 @@ public class Primary : MonoBehaviour
         }
         if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true && !animator.GetBool("Running"))
         {
+            isAttacking = true;
+            Invoke("TurnOffIsAttacking", 1.0f);
             animator.SetTrigger("Standing&Attacking");
         }
-        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true && animator.GetBool("Running")) { animator.SetTrigger("Running&Attacking"); }
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true && animator.GetBool("Running")) {
+            isAttacking = true;
+            Invoke("TurnOffIsAttacking", 1.0f);
+            animator.SetTrigger("Running&Attacking"); }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -71,6 +76,11 @@ public class Primary : MonoBehaviour
 
             grounded = true;
         }
+
+        else if (collision.transform.tag == "Enemy" && isAttacking)
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -80,4 +90,6 @@ public class Primary : MonoBehaviour
             grounded = false;
         }
     }
+
+    private void TurnOffIsAttacking() { isAttacking = false; }
 }
