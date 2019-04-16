@@ -17,7 +17,6 @@ public class SceneController : MonoBehaviour
 
     public void Awake() { Instance = this; }
 
-    // Start is called before the first frame update
     void Start()
     {
         if (!PlayerPrefs.HasKey("Master Volume")) { PlayerPrefs.SetFloat("Master Volume", 1f); }
