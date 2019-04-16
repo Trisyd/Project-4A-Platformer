@@ -13,6 +13,7 @@ public class Primary : MonoBehaviour
     private float direction;
     private bool grounded = true;
     private bool isAttacking = false;
+    //private bool isRunning = false;
 
 
     private void Awake()
@@ -49,10 +50,11 @@ public class Primary : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
-        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true)
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true && !animator.GetBool("Running"))
         {
             animator.SetTrigger("Standing&Attacking");
         }
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true && animator.GetBool("Running")) { animator.SetTrigger("Running&Attacking"); }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
