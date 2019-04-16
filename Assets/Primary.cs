@@ -46,7 +46,7 @@ public class Primary : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift))
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftShift)) && grounded == true)
         {
             animator.SetTrigger("Standing&Attacking");
         }
