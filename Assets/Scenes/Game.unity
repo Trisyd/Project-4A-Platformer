@@ -2024,6 +2024,8 @@ MonoBehaviour:
   playerSpeed: 4
   jumpForce: 16
   contactThreshold: 90
+  livesText: {fileID: 1094257053}
+  scoreText: {fileID: 958160037}
   camera: {fileID: 0}
 --- !u!212 &1287504366
 SpriteRenderer:
@@ -2990,6 +2992,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925981427128271415, guid: ba41611b8aef44442875efe93b96cf76,
+        type: 3}
+      propertyPath: m_TagString
+      value: Spike
       objectReference: {fileID: 0}
     - target: {fileID: 2925981427128271408, guid: ba41611b8aef44442875efe93b96cf76,
         type: 3}

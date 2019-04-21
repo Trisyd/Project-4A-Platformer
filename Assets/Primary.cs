@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Primary : MonoBehaviour
 {
+    private int playerLives = 2;
+    private int playerScore = 0;
+
     [SerializeField] float playerSpeed = 3.0f;
     [SerializeField] float jumpForce = 2.0f;
     [SerializeField] float contactThreshold = 90f;
+
+    public Text livesText;
+    public Text scoreText;
 
     public Camera camera;
 
@@ -63,6 +70,8 @@ public class Primary : MonoBehaviour
             isAttacking = true;
             Invoke("TurnOffIsAttacking", 1.0f);
             animator.SetTrigger("Running&Attacking"); }
+
+        livesText.text = "Lives: " + playerLives + "/2";
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -84,6 +93,9 @@ public class Primary : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+        else if (collision.transform.tag == "Spike") { playerLives -= 1; }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
