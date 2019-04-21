@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadMenu() { SceneManager.LoadScene("Menu"); }
 
-    public void LoadGame() { SceneManager.LoadScene("Primary"); }
+    public void LoadGame() { SceneManager.LoadScene("Game"); }
 
     public void CloseGame() { Application.Quit(); }
 }
