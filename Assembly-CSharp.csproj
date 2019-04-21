@@ -66,6 +66,7 @@
     <Compile Include="Assets\Imported Scripts\HighScoreController.cs" />
     <Compile Include="Assets\Imported Scripts\SceneController.cs" />
     <Compile Include="Assets\Primary.cs" />
+    <Compile Include="Assets\SpikeController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/priemg/_Personal/Rensselaer/Intro to Game Programming/Project 4 Platformer/Project #4A Platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
