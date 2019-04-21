@@ -8,6 +8,8 @@ public class Primary : MonoBehaviour
     [SerializeField] float jumpForce = 2.0f;
     [SerializeField] float contactThreshold = 90f;
 
+    public Camera camera;
+
     private Animator animator;
 
     private float direction;
@@ -18,6 +20,7 @@ public class Primary : MonoBehaviour
 
     private void Awake()
     {
+        camera = FindObjectOfType<Camera>();
         animator = GetComponent<Animator>();
     }
 

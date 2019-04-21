@@ -25,13 +25,13 @@ public class BasicEnemy : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Player" && (collision.gameObject.GetComponent<Animator>().GetBool("Running&Attacking") || collision.gameObject.GetComponent<Animator>().GetBool("Standing&Attacking")))
-        {
-            Debug.Log("Player attacking viciously");
-            Destroy(gameObject);
-        }
-        else { Debug.Log("Player's not attacking, pal"); }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.transform.tag == "Player" && (collision.gameObject. || collision.gameObject.GetComponent<Animator>().GetBool("Standing&Attacking")))
+    //    {
+    //        Debug.Log("Player attacking viciously");
+    //        Destroy(gameObject);
+    //    }
+    //    else { Debug.Log("Player's not attacking, pal"); }
+    //}
 }
