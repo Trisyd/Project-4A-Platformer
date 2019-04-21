@@ -14,6 +14,9 @@ public class Primary : MonoBehaviour
 
     public Text livesText;
     public Text scoreText;
+    public Text timeText;
+
+    private float timeMonitoring;
 
     public Camera camera;
 
@@ -40,6 +43,7 @@ public class Primary : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeMonitoring = 120f - Time.time;
         direction = Input.GetAxis("Horizontal");
 
         if (Input.GetKey(KeyCode.D))
@@ -72,6 +76,7 @@ public class Primary : MonoBehaviour
             animator.SetTrigger("Running&Attacking"); }
 
         livesText.text = "Lives: " + playerLives + "/2";
+        timeText.text = "Time: " + Mathf.Round(timeMonitoring) + "s";
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
