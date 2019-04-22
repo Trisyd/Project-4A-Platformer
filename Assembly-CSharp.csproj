@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\BasicEnemy.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\FallingPlatformController.cs" />
     <Compile Include="Assets\Imported Scripts\AudioSettingsManager.cs" />
     <Compile Include="Assets\Imported Scripts\HighScoreController.cs" />
     <Compile Include="Assets\Imported Scripts\SceneController.cs" />
