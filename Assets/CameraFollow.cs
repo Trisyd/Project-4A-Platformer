@@ -9,12 +9,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playerGameObject = GetComponent<GameObject>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // y-position has a (+1) because I want the camera to sit just above the player
         gameObject.transform.position = new Vector3(playerGameObject.transform.position.x, playerGameObject.transform.position.y + 1f, -10);
     }
 }
