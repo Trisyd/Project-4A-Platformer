@@ -59,21 +59,8 @@ public class Primary : MonoBehaviour
             animator.SetBool("Running", true);
         }
         else { animator.SetBool("Running", false); }
-        if (direction < 0) {
-            GetComponent<SpriteRenderer>().flipX = true;
-            if (hasReversedWeaponCollider == false) { GetComponentInChildren<PolygonCollider2D>().transform.Translate(new Vector2(-0.33f, 0.02f));
-                hasCorrectedWeaponCollider = false;
-            }
-            hasReversedWeaponCollider = true;
-            //Debug.Log("hasReversedWeaponCollider: " + hasReversedWeaponCollider);
-            //Debug.Log("Vector2: " + GetComponentInChildren<PolygonCollider2D>().transform.position.x);
-        }
-        else if (direction > 0) { GetComponent<SpriteRenderer>().flipX = false;
-            if (hasCorrectedWeaponCollider == false) { GetComponentInChildren<PolygonCollider2D>().transform.Translate(new Vector2(+0.33f, -0.02f));
-                hasCorrectedWeaponCollider = true;
-            }
-            hasReversedWeaponCollider = false;
-        }
+        if (direction < 0) { GetComponent<SpriteRenderer>().flipX = true; }
+        else if (direction > 0) { GetComponent<SpriteRenderer>().flipX = false; }
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && grounded == true)
         {
