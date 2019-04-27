@@ -77,6 +77,7 @@ public class Primary : MonoBehaviour
 
         livesText.text = "Lives: " + playerLives + "/2";
         timeText.text = "Time: " + Mathf.Round(timeMonitoring) + "s";
+        scoreText.text = "Score: " + playerScore;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
