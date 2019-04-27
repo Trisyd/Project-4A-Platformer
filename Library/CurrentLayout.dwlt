@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 524}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -74,10 +74,10 @@ MonoBehaviour:
     y: 0
     width: 885
     height: 717
-  m_MinSize: {x: 232, y: 498}
-  m_MaxSize: {x: 10002, y: 14048}
+  m_MinSize: {x: 232, y: 474}
+  m_MaxSize: {x: 10002, y: 14024}
   vertical: 1
-  controlID: 48
+  controlID: 106
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,8 +126,8 @@ MonoBehaviour:
     y: 30
     width: 1522
     height: 717
-  m_MinSize: {x: 713, y: 498}
-  m_MaxSize: {x: 18008, y: 14048}
+  m_MinSize: {x: 707, y: 474}
+  m_MaxSize: {x: 18002, y: 14024}
   vertical: 0
   controlID: 35
 --- !u!114 &6
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 885
     height: 443
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 3662
+  m_LastSelectedObjectID: 13172
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -519,21 +519,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
-  m_StartGridSize: 60
+  m_StartGridSize: 53
   m_LastFolders:
-  - Assets
-  m_LastFoldersGridSize: 60
+  - Assets/Scripts
+  m_LastFoldersGridSize: 53
   m_LastProjectPath: 'C:\Users\priemg\_Personal\Rensselaer\Intro to Game Programming\Project
     4 Platformer\Project #4A Platformer'
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c090000
-    m_LastClickedID: 2412
-    m_ExpandedIDs: 000000006c090000800c000000ca9a3b
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: 3a4f0200
+    m_LastClickedID: 151354
+    m_ExpandedIDs: 000000006c090000840c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -561,7 +561,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006c090000800c0000
+    m_ExpandedIDs: 000000006c090000840c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,8 +613,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 64.00055}
-    m_GridSize: 60
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 53
   m_DirectoriesAreaWidth: 232
 --- !u!114 &18
 MonoBehaviour:
@@ -682,21 +682,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0882ffff7e82fffffe82ffff0c83fffff096ffff1c97ffff00abffff0eabffff14b7ffff38b7ffff46b7ffff5ab7ffffa8b7ffff64cdffff4ae1ffff3ce2ffff96ebffffd4fbfffff4ffffff7a0f0000c80f0000
+      m_ExpandedIDs: f298ffff38a5ffff3aa5ffff78a5ffff9ca5ffff46abffffa0afffff6ae2ffffa6e2ffff9ae5ffff1ee6ffff5ae6ffff86e6ffff3ae7ffff78e7ffffd4fbfffff22e000038330000743300001434000066340000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: New Sprite
+        m_OriginalName: New Sprite
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -19720
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -737,9 +737,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 39.838875, y: 0.43482268, z: -0.44757462}
+    m_Target: {x: 106.88436, y: -2.5144072, z: -0.6125483}
     speed: 2
-    m_Value: {x: 39.838875, y: 0.43482268, z: -0.44757462}
+    m_Value: {x: 106.88436, y: -2.5144072, z: -0.6125483}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -771,9 +771,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 49.15267
+    m_Target: 39.046352
     speed: 2
-    m_Value: 49.15267
+    m_Value: 39.046352
   m_Ortho:
     m_Target: 1
     speed: 2
