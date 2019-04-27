@@ -111,5 +111,15 @@ public class Primary : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Collectible")
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("Collectible Picked up!");
+            playerScore += 1000;
+        }
+    }
+
     private void TurnOffIsAttacking() { isAttacking = false; }
 }
