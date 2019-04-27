@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - Collectible
   - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX

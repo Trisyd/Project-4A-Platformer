@@ -86,6 +86,7 @@ public class Primary : MonoBehaviour
     {
         if (collision.transform.tag == "Ground")
         {
+            // I couldn't get this vertex check to implement correctly
             //for (int i = 0; i < collision.contacts.Length; i++)
             //{
             //    if (Vector3.Angle(collision.contacts[i].normal, Vector3.up) <= contactThreshold)
@@ -122,6 +123,12 @@ public class Primary : MonoBehaviour
             collision.GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject, 1.5f);
             playerScore += 1000;
+        }
+
+        if (collision.tag == "Enemy")
+        {
+            Debug.Log("Enemy Hit!");
+            playerLives -= 1;
         }
     }
 

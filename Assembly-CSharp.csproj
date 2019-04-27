@@ -69,6 +69,7 @@
     <Compile Include="Assets\Primary.cs" />
     <Compile Include="Assets\RisingPlatformController.cs" />
     <Compile Include="Assets\SpikeController.cs" />
+    <Compile Include="Assets\spinner.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/priemg/_Personal/Rensselaer/Intro to Game Programming/Project 4 Platformer/Project #4A Platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
