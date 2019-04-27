@@ -118,8 +118,9 @@ public class Primary : MonoBehaviour
     {
         if (collision.tag == "Collectible")
         {
-            Destroy(collision.gameObject);
-            Debug.Log("Collectible Picked up!");
+            Destroy(collision.GetComponent<SpriteRenderer>());
+            collision.GetComponent<ParticleSystem>().Play();
+            Destroy(collision.gameObject, 1.5f);
             playerScore += 1000;
         }
     }
