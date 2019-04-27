@@ -60,16 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BasicEnemy.cs" />
-    <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\FallingPlatformController.cs" />
     <Compile Include="Assets\Imported Scripts\AudioSettingsManager.cs" />
     <Compile Include="Assets\Imported Scripts\HighScoreController.cs" />
     <Compile Include="Assets\Imported Scripts\SceneController.cs" />
-    <Compile Include="Assets\Primary.cs" />
-    <Compile Include="Assets\RisingPlatformController.cs" />
-    <Compile Include="Assets\SpikeController.cs" />
-    <Compile Include="Assets\spinner.cs" />
+    <Compile Include="Assets\Imported Scripts\spinner.cs" />
+    <Compile Include="Assets\Scripts\BasicEnemy.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\FallingPlatformController.cs" />
+    <Compile Include="Assets\Scripts\Primary.cs" />
+    <Compile Include="Assets\Scripts\RisingPlatformController.cs" />
+    <Compile Include="Assets\Scripts\SpikeController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/priemg/_Personal/Rensselaer/Intro to Game Programming/Project 4 Platformer/Project #4A Platformer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
