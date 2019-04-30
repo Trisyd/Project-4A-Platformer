@@ -48,7 +48,7 @@ public class Primary : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeMonitoring = 120f - Time.time;
+        timeMonitoring = 300f - Time.time;
         direction = Input.GetAxis("Horizontal");
 
         if (Input.GetKey(KeyCode.D))
@@ -80,8 +80,13 @@ public class Primary : MonoBehaviour
             Invoke("TurnOffIsAttacking", 1.0f);
             animator.SetTrigger("Running&Attacking"); }
 
-        if (playerLives >= 0) { livesText.text = "Lives: " + playerLives + "/2"; }
-        else if (playerLives < 0) { livesText.text = "Lives: 0/2"; }
+        if (playerLives > 0) { livesText.text = "Lives: " + playerLives + "/2"; }
+        else if (playerLives <= 0)
+        {
+            livesText.text = "Lives: 0/2";
+            ManageHighScores(playerScore);
+            SceneManager.LoadScene("Menu");
+        }
 
         livesText.text = "Lives: " + playerLives + "/2";
         timeText.text = "Time: " + Mathf.Round(timeMonitoring) + "s";
@@ -120,7 +125,8 @@ public class Primary : MonoBehaviour
         Invoke("LoadEndGame", 2f);
         //goalText.enabled = true;
         goalText.gameObject.SetActive(true);
-        Debug.Log(goalText.IsActive());
+        playerScore += (int)(Mathf.Round(timeMonitoring) * 10);
+        ManageHighScores(playerScore);
         Destroy(FindObjectOfType<Camera>().GetComponent<CameraFollow>());
     }
 
@@ -152,8 +158,47 @@ public class Primary : MonoBehaviour
             if (playerLives <= 0)
             {
                 Debug.Log("Player is Dying");
-
+                ManageHighScores(playerScore);
             }
+        }
+    }
+
+    //public void CreateScorePref()
+    //{
+    //    if (PlayerPrefs.HasKey("Ultimate Score") == false) { PlayerPrefs.SetInt("Ultimate Score", 0); }
+    //    else { PlayerPrefs.SetInt("Ultimate Score", 0); }
+    //}
+
+    public void ManageHighScores(int s) //this function manages the high scores, ordering them correctly after every new score
+    {
+        int scoreCount = 1;
+        while (scoreCount < 11)
+        {
+            if (PlayerPrefs.HasKey("HighScore" + scoreCount))
+            {
+                if (s > PlayerPrefs.GetInt("HighScore" + scoreCount))
+                {
+                    int scoreCountFromBottom = 10;
+                    while (scoreCountFromBottom > scoreCount)
+                    {
+                        if (PlayerPrefs.HasKey("HighScore" + scoreCountFromBottom))
+                        {
+                            PlayerPrefs.SetInt("HighScore" + scoreCountFromBottom, PlayerPrefs.GetInt("HighScore" + (scoreCountFromBottom - 1)));
+                        }
+                        scoreCountFromBottom -= 1;
+                        continue;
+                    }
+                    PlayerPrefs.SetInt("HighScore" + scoreCount, s);
+                    break;
+                }
+
+                else
+                {
+                    scoreCount += 1;
+                    continue;
+                }
+            }
+            else { PlayerPrefs.SetInt("HighScore" + scoreCount, s); }
         }
     }
 
