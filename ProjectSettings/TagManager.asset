@@ -9,6 +9,7 @@ TagManager:
   - Collectible
   - Weapon
   - Enemy
+  - Goal
   layers:
   - Default
   - TransparentFX

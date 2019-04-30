@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Primary : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Primary : MonoBehaviour
     public Text livesText;
     public Text scoreText;
     public Text timeText;
+    public Text goalText;
 
     private float timeMonitoring;
 
@@ -108,7 +111,20 @@ public class Primary : MonoBehaviour
 
         else if (collision.transform.tag == "Spike") { playerLives -= 1; }
 
+        else if (collision.transform.tag == "Goal") { EndGame(); }
+
     }
+
+    private void EndGame()
+    {
+        Invoke("LoadEndGame", 2f);
+        //goalText.enabled = true;
+        goalText.gameObject.SetActive(true);
+        Debug.Log(goalText.IsActive());
+        Destroy(FindObjectOfType<Camera>().GetComponent<CameraFollow>());
+    }
+
+    private void LoadEndGame() { SceneManager.LoadScene("Menu"); }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
